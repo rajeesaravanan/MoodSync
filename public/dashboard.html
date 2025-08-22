@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoodSync Dashboard</title>
+  <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <h1>MoodSync Dashboard</h1>
+      <button id="logoutBtn">Logout</button>
+    </header>
+
+    <main class="cards">
+      <div class="card mood-card">
+        <h2>Mood Status</h2>
+        <p class="mood-text">Your current mood: <span id="mood-status">😊 Happy</span></p>
+      </div>
+
+      <div class="card music-card">
+        <h2>Music Recommendations</h2>
+        <ul id="music-list">
+          <li>Calm Vibes</li>
+          <li>Focus Beats</li>
+          <li>Energetic Mix</li>
+        </ul>
+      </div>
+
+      <div class="card tasks-card">
+        <h2>Tasks</h2>
+        <ul id="tasks-list">
+          <li>Take a 10-min walk</li>
+          <li>Write journal</li>
+          <li>Listen to music</li>
+        </ul>
+      </div>
+
+      <div class="card journal-card">
+        <h2>Mood Journal</h2>
+        <button id="add-entry">+ Add Entry</button>
+        <div id="journal-entries">
+          <p>No entries yet.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Redirect if no token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      window.location.href = 'login.html';
+    }
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      localStorage.removeItem('token');
+      window.location.href = 'login.html';
+    });
+  </script>
+
+    <script src="./js/dashboard.js"></script>
+
+</body>
+</html>

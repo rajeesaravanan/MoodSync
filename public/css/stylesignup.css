@@ -1,0 +1,80 @@
+/* Full screen body */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background image with blur */
+.background {
+    background: url('../images/Mood-background.png') no-repeat center center/cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    z-index: -1;
+}
+
+/* Overlay content */
+.overlay {
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+/* Form container */
+.form-container {
+    background: rgba(0,0,0,0.5);
+    padding: 40px 60px;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.4);
+}
+
+/* Form inputs */
+.form-container input {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 1em;
+}
+
+/* Buttons styling */
+.btn {
+    background: linear-gradient(135deg, #ca4bc8, #3A8DFF);
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #9b54b9, #66a9da);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Links */
+.form-container p a {
+    color: #66a9da;
+    text-decoration: none;
+}
+
+.form-container p a:hover {
+    text-decoration: underline;
+}
